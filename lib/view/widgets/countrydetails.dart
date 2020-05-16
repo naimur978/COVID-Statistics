@@ -10,103 +10,89 @@ class Coronad extends StatelessWidget {
   Coronad({this.corona});
 
   bodyWidget(BuildContext context) => ListView(
-    children: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(left: 20.0),
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 15),
-            Text(
-              'last updated at ' +
-                  DateFormat('dd.MM.yyyy, hh:mm a')
-                      .format(corona.date.toUtc()),
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            Center(
-              child: Image.network(
-                'https://www.countryflags.io/${corona.code}/flat/64.png',
-                height: 130.0,
-              ),
-            ),
-            Row(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Column(
               children: <Widget>[
-                colorCard("Total Cases", corona.totalConfirmed.toString(),
-                    context, Color(0xFF8fb9a8)),
-                colorCard("New Cases", corona.newConfirmed.toString(),
-                    context, Color(0xFFf1828d)),
+                SizedBox(height: 15),
+                Text(
+                  'last updated at ' +
+                      DateFormat('dd.MM.yyyy, hh:mm a')
+                          .format(corona.date.toUtc()),
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Center(
+                  child: Image.network(
+                    'https://www.countryflags.io/${corona.code}/flat/64.png',
+                    height: 130.0,
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard("Total Cases", corona.totalConfirmed.toString(),
+                        context, Color(0xFF8fb9a8)),
+                    colorCard("New Cases", corona.newConfirmed.toString(),
+                        context, Color(0xFFf1828d)),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard("Total Deaths", corona.totalDeaths.toString(),
+                        context, Color(0xFF765d69)),
+                    colorCard("New Deaths", corona.newDeaths.toString(),
+                        context, Color(0xFF685d79)),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard(
+                        "Total Recoverd",
+                        corona.totalRecovered.toString(),
+                        context,
+                        Color(0xFF475c78)),
+                    colorCard("New Recovered", corona.newRecovered.toString(),
+                        context, Color(0xFFff3f5e)),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard(
+                        "Total Recoverd",
+                        corona.totalRecovered.toString(),
+                        context,
+                        Color(0xFF475c78)),
+                    colorCard("New Recovered", corona.newRecovered.toString(),
+                        context, Color(0xFFff3f5e)),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard(
+                        "Total Recoverd",
+                        corona.totalRecovered.toString(),
+                        context,
+                        Color(0xFF475c78)),
+                    colorCard("New Recovered", corona.newRecovered.toString(),
+                        context, Color(0xFFff3f5e)),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    colorCard(
+                        "Total Recoverd",
+                        corona.totalRecovered.toString(),
+                        context,
+                        Color(0xFF475c78)),
+                    colorCard("New Recovered", corona.newRecovered.toString(),
+                        context, Color(0xFFff3f5e)),
+                  ],
+                ),
               ],
             ),
-            Row(
-              children: <Widget>[
-                colorCard("Total Deaths", corona.totalDeaths.toString(),
-                    context, Color(0xFF765d69)),
-                colorCard("New Deaths", corona.newDeaths.toString(),
-                    context, Color(0xFF685d79)),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                colorCard(
-                    "Total Recoverd",
-                    corona.totalRecovered.toString(),
-                    context,
-                    Color(0xFF475c78)),
-                colorCard("New Recovered", corona.newRecovered.toString(),
-                    context, Color(0xFFff3f5e)),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                colorCard(
-                    "Total Recoverd",
-                    corona.totalRecovered.toString(),
-                    context,
-                    Color(0xFF475c78)),
-                colorCard("New Recovered", corona.newRecovered.toString(),
-                    context, Color(0xFFff3f5e)),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                colorCard(
-                    "Total Recoverd",
-                    corona.totalRecovered.toString(),
-                    context,
-                    Color(0xFF475c78)),
-                colorCard("New Recovered", corona.newRecovered.toString(),
-                    context, Color(0xFFff3f5e)),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                colorCard(
-                    "Total Recoverd",
-                    corona.totalRecovered.toString(),
-                    context,
-                    Color(0xFF475c78)),
-                colorCard("New Recovered", corona.newRecovered.toString(),
-                    context, Color(0xFFff3f5e)),
-              ],
-            ),
-          ],
-        ),
-      ),
-      Align(
-        alignment: Alignment.topCenter,
-        child: Hero(
-            tag: corona.newConfirmed,
-            child: Container(
-              height: 140.0,
-              width: 140.0,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assests/coronadetails.png"),
-                  )),
-            )),
-      )
-    ],
-  );
+          ),
+        ],
+      );
 
   @override
   Widget build(BuildContext context) {
