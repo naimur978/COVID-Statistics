@@ -1,7 +1,7 @@
 import 'package:coronavirus/model/country_data.dart';
 import 'package:coronavirus/shared/font_styles.dart';
 import 'package:coronavirus/utils/format.dart';
-import 'package:coronavirus/view/widgets/countrydetail.dart';
+import 'package:coronavirus/view/widgets/countrydetails.dart';
 import 'package:flutter/material.dart';
 
 class CountryItem extends StatelessWidget {

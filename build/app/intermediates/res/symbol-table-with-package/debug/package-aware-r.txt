@@ -1,4 +1,4 @@
-com.example.coronavirus_app
+com.naimur978.coronavirus_app
 attr alpha
 attr coordinatorLayoutStyle
 attr font
