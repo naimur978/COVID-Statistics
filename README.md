@@ -11,4 +11,4 @@
 
 
 ## Source of API
-* [Corona API](https://covid19api.com/)
+* [covid19api.com](https://covid19api.com/)
