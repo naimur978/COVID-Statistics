@@ -6,5 +6,5 @@
 ## 📸 ScreenShots
 
 
-|<img src="ss/1.png" width="250">|<img src="ss/2.png" width="250">|
-|<img src="ss/3.png" width="250">|<img src="ss/4.png" width="250">|
+|<img src="ss/1.jpg" width="250">|<img src="ss/2.jpg" width="250">|
+|<img src="ss/3.jpg" width="250">|<img src="ss/4.jpg" width="250">|
