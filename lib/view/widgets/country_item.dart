@@ -12,7 +12,7 @@ class CountryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xff383838),
+      color: Color(0xFF1D1E33),
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
@@ -31,16 +31,22 @@ class CountryItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: 4),
-            Text(
-              _countryData.name,
-              style: title,
+            Padding(
+              padding: EdgeInsets.only(left: 11, top: 5),
+              child: Text(
+                _countryData.name,
+                style: title,
+              ),
             ),
             SizedBox(height: 5),
             Row(
               children: [
                 Center(
-                  child: Image.network(
-                      'https://www.countryflags.io/${_countryData.code}/flat/64.png'),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 11.0),
+                    child: Image.network(
+                        'https://www.countryflags.io/${_countryData.code}/flat/64.png'),
+                  ),
                 ),
                 _newDataBlock('Cases', _countryData.totalConfirmed,
                     _countryData.newConfirmed, Color(0xff51A5d3)),

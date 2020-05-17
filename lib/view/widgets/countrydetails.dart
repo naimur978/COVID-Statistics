@@ -1,5 +1,4 @@
 import 'package:coronavirus/model/country_data.dart';
-import 'package:coronavirus/view/widgets/colors.dart';
 import 'package:coronavirus/view/widgets/sceensize.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -15,12 +14,12 @@ class Coronad extends StatelessWidget {
             padding: EdgeInsets.only(left: 20.0),
             child: Column(
               children: <Widget>[
-                SizedBox(height: 15),
+                SizedBox(height: 70),
                 Text(
                   'last updated at ' +
                       DateFormat('dd.MM.yyyy, hh:mm a')
                           .format(corona.date.toUtc()),
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  style: TextStyle(color: Colors.white70, fontSize: 20),
                 ),
                 Center(
                   child: Image.network(
@@ -32,18 +31,22 @@ class Coronad extends StatelessWidget {
                   children: <Widget>[
                     colorCard("Total Cases", corona.totalConfirmed.toString(),
                         context, Color(0xFF8fb9a8)),
+                    SizedBox(width: 10),
                     colorCard("New Cases", corona.newConfirmed.toString(),
                         context, Color(0xFFf1828d)),
                   ],
                 ),
+                SizedBox(height: 10),
                 Row(
                   children: <Widget>[
                     colorCard("Total Deaths", corona.totalDeaths.toString(),
                         context, Color(0xFF765d69)),
+                    SizedBox(width: 10),
                     colorCard("New Deaths", corona.newDeaths.toString(),
                         context, Color(0xFF685d79)),
                   ],
                 ),
+                SizedBox(height: 10),
                 Row(
                   children: <Widget>[
                     colorCard(
@@ -51,39 +54,7 @@ class Coronad extends StatelessWidget {
                         corona.totalRecovered.toString(),
                         context,
                         Color(0xFF475c78)),
-                    colorCard("New Recovered", corona.newRecovered.toString(),
-                        context, Color(0xFFff3f5e)),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    colorCard(
-                        "Total Recoverd",
-                        corona.totalRecovered.toString(),
-                        context,
-                        Color(0xFF475c78)),
-                    colorCard("New Recovered", corona.newRecovered.toString(),
-                        context, Color(0xFFff3f5e)),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    colorCard(
-                        "Total Recoverd",
-                        corona.totalRecovered.toString(),
-                        context,
-                        Color(0xFF475c78)),
-                    colorCard("New Recovered", corona.newRecovered.toString(),
-                        context, Color(0xFFff3f5e)),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    colorCard(
-                        "Total Recoverd",
-                        corona.totalRecovered.toString(),
-                        context,
-                        Color(0xFF475c78)),
+                    SizedBox(width: 10),
                     colorCard("New Recovered", corona.newRecovered.toString(),
                         context, Color(0xFFff3f5e)),
                   ],
@@ -97,13 +68,16 @@ class Coronad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Bgcolor,
+      backgroundColor: Color(0xFF0A0E21),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         title: Text(
           corona.name,
           style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.white, //change your color here
         ),
       ),
       body: bodyWidget(context),

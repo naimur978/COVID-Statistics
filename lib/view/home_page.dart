@@ -52,8 +52,11 @@ class _HomePageState extends State<HomePage> {
         else if (model.state == ViewState.Success)
           bodyWidget = _body(model);
         else
-          bodyWidget = Center(
-              child: Text('Oops...', style: TextStyle(color: Colors.white)));
+          bodyWidget = RefreshIndicator(
+            child: Center(
+                child: Text('Oops...', style: TextStyle(color: Colors.white))),
+            onRefresh: () async => model.fetchSummeryData(),
+          );
 
         return GestureDetector(
           onTap: () {
@@ -63,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             }
           },
           child: Scaffold(
-            backgroundColor: Color(0xff383838),
+            backgroundColor: Color(0xFF0A0E21),
             appBar: _appBar(),
             body: bodyWidget,
             floatingActionButton: showFloatingButton ? _floatingButton() : null,
@@ -75,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
   _appBar() => AppBar(
         elevation: 0,
-        backgroundColor: Color(0xff383838),
+        backgroundColor: Color(0xFF0A0E21),
         title: Center(
           child: Text(
             'Covid-19',
@@ -90,54 +93,56 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: RefreshIndicator(
-        backgroundColor: Color(0xff383838),
+        backgroundColor: Color(0xFF0A0E21),
         onRefresh: () async => model.fetchSummeryData(),
-        child: ListView(
-          controller: _scrollController,
-          physics: AlwaysScrollableScrollPhysics(),
-          children: [
-            /*TotalCard(
-                'Total',
-                model.globalData.totalConfirmed,
-                model.globalData.totalRecovered,
-                model.globalData.totalDeaths,
-                Color(0xff45B4B4)),
-            SizedBox(height: 15),
-            TotalCard(
-                'New',
-                model.globalData.newConfirmed,
-                model.globalData.newRecovered,
-                model.globalData.newDeaths,
-                Color(0xffCE5E51)),
-            SizedBox(height: 20),*/
-            TextField(
-              onChanged: (text) => model.searchFilter(text),
-              style: TextStyle(color: Colors.white70, fontSize: 20),
-              cursorColor: Colors.cyan,
-              decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
+        child: Container(
+          child: ListView(
+            controller: _scrollController,
+            physics: AlwaysScrollableScrollPhysics(),
+            children: [
+              /*TotalCard(
+                  'Total',
+                  model.globalData.totalConfirmed,
+                  model.globalData.totalRecovered,
+                  model.globalData.totalDeaths,
+                  Color(0xff45B4B4)),
+              SizedBox(height: 15),
+              TotalCard(
+                  'New',
+                  model.globalData.newConfirmed,
+                  model.globalData.newRecovered,
+                  model.globalData.newDeaths,
+                  Color(0xffCE5E51)),
+              SizedBox(height: 20),*/
+              TextField(
+                onChanged: (text) => model.searchFilter(text),
+                style: TextStyle(color: Colors.white70, fontSize: 20),
+                cursorColor: Colors.cyan,
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white60,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.cyan,
+                      width: 2,
+                    ),
+                  ),
+                  hoverColor: Colors.cyan,
+                  focusColor: Colors.cyan,
+                  hintStyle: TextStyle(
                     color: Colors.white60,
                   ),
+                  hintText: 'Search by country name',
+                  suffixIcon: Icon(Icons.search, color: Colors.white60),
                 ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.cyan,
-                    width: 2,
-                  ),
-                ),
-                hoverColor: Colors.cyan,
-                focusColor: Colors.cyan,
-                hintStyle: TextStyle(
-                  color: Colors.white60,
-                ),
-                hintText: 'Search by country name',
-                suffixIcon: Icon(Icons.search, color: Colors.white60),
               ),
-            ),
-            SizedBox(height: 10),
-            ..._counrtiesList(model.filteredCountryDatas),
-          ],
+              SizedBox(height: 10),
+              ..._counrtiesList(model.filteredCountryDatas),
+            ],
+          ),
         ),
       ),
     );

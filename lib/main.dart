@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.cyan, fontFamily: 'RobotoLight'),
+      theme: ThemeData(
+          primarySwatch: Colors.cyan,
+          accentColor: Colors.blueGrey,
+          fontFamily: 'RobotoLight'),
       home: HomePage(),
     );
   }

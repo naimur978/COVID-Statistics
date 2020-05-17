@@ -1,0 +1,6 @@
+# Referenced at D:\Softwares\Android Projects\flutter\Corona-Statistics\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:21
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at D:\Softwares\Android Projects\flutter\Corona-Statistics\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:26
+-keep class com.example.coronavirus_app.MainActivity { <init>(); }
+# Referenced at D:\Softwares\Android Projects\flutter\Corona-Statistics\build\app\intermediates\merged_manifests\release\AndroidManifest.xml:21
+-keep class io.flutter.app.FlutterApplication { <init>(); }
