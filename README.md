@@ -2,10 +2,12 @@
 
 A comprehensive Flutter application that provides real-time COVID-19 statistics and visualizations, helping users stay informed about the global pandemic situation.
 
-<img src="ss/1.jpg" width="200" alt="App Screenshot 1"/>
-<img src="ss/2.jpg" width="200" alt="App Screenshot 2"/>
-<img src="ss/3.jpg" width="200" alt="App Screenshot 3"/>
-<img src="ss/4.jpg" width="200" alt="App Screenshot 4"/>
+<div style="display: flex; gap: 10px;">
+  <img src="ss/1.jpg" width="200" alt="App Screenshot 1"/>
+  <img src="ss/2.jpg" width="200" alt="App Screenshot 2"/>
+  <img src="ss/3.jpg" width="200" alt="App Screenshot 3"/>
+  <img src="ss/4.jpg" width="200" alt="App Screenshot 4"/>
+</div>
 
 ## Features
 
